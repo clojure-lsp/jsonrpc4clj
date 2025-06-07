@@ -58,6 +58,6 @@
     <url>https://github.com/clojure-lsp/jsonrpc4clj</url>
     <connection>scm:git:git://github.com/clojure-lsp/jsonrpc4clj.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/clojure-lsp/jsonrpc4clj.git</developerConnection>
-    <tag>v1.13.1</tag>
+    <tag>v1.0.0</tag>
   </scm>
 </project>
