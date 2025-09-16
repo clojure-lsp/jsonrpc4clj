@@ -13,7 +13,15 @@
    :invalid-request  {:code -32600, :message "Invalid Request"}
    :method-not-found {:code -32601, :message "Method not found"}
    :invalid-params   {:code -32602, :message "Invalid params"}
-   :internal-error   {:code -32603, :message "Internal error"}})
+   :internal-error   {:code -32603, :message "Internal error"}
+
+   ;; LSP errors
+   :server-not-initialized {:code -32002, :message "Server not initialized"}
+   :unknown-error-code     {:code -32001, :message "Unknown error"}
+   :request-failed         {:code -32803, :message "Request failed"}
+   :server-cancelled       {:code -32802, :message "Server cancelled"}
+   :content-modified       {:code -32801, :message "Content modified"}
+   :request-cancelled      {:code -32800, :message "Request cancelled"}})
 
 (defn by-code
   "Returns a JSON-RPC error object, for use in an error response.
