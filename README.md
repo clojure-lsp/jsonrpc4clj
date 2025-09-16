@@ -181,7 +181,7 @@ The trace level can be changed during the life of a server by calling, for examp
 
 ### Testing
 
-A client is in many ways like a server—it also sends and receives requests and notifications and receives responses. That is, JSON-RPC is a bi-directional protocol. As such, you may be able to use some of jsonrpc4clj's tools to build a mock client for testing. See `integration.client` in `clojure-lsp` for one such example.
+A client is in many ways like a server—it also sends and receives requests and notifications and receives responses. That is, JSON-RPC is a bi-directional protocol. As such, you may be able to use some of jsonrpc4clj's tools to build a mock client for testing. See `integration.client` in `clojure-lsp` or `integration.client` in `eca` for one such example.
 
 You may also find `jsonrpc4clj.server/chan-server` a useful alternative to `stdio-server`. This server reads and writes off channels, instead of stdio streams. See `jsonrpc4clj.server-test` for many examples of interacting with such a server.
 
@@ -196,6 +196,7 @@ jsonrpc4clj provides one tool to avoid accidental writes to stdout (or rather to
 ## Known jsonrpc4clj users
 
 - [clojure-lsp](https://clojure-lsp.io/): A Clojure LSP server implementation.
+- [eca](https://eca.dev/): AI pair-programming tool for your editor.
 - [mcp-clojure-sdk](https://github.com/unravel-team/mcp-clojure-sdk): A Clojure MCP SDK for writing MCP servers.
 
 ## Release
