@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v1.0.2
+
 - Keep LSP errors until fix on lsp4clj
 
 ## v1.0.1
