@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v1.0.1
+
 Remove LSP errors.
 
 ## v1.0.0
