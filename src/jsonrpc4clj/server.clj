@@ -177,11 +177,15 @@
 
 (defn pending-received-request [method context params]
   (let [cancelled? (atom false)
-        ;; coerce result/error to promise
-        result-promise (p/promise
-                         (receive-request method
-                                          (assoc context ::req-cancelled? cancelled?)
-                                          params))]
+        ;; Run handler asynchronously to prevent blocking the request processing thread.
+        ;; Using p/future instead of p/promise ensures handlers run on a thread pool,
+        ;; allowing the main loop to continue processing other messages and responses.
+        ;; Wrap in discarding-stdout to prevent handler logging from corrupting JSON-RPC output.
+        result-promise (p/future
+                         (discarding-stdout
+                           (receive-request method
+                                            (assoc context ::req-cancelled? cancelled?)
+                                            params)))]
     (map->PendingReceivedRequest
       {:result-promise result-promise
        :cancelled? cancelled?})))
